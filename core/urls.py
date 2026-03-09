@@ -27,10 +27,13 @@ from django.conf.urls.static import static
 urlpatterns = [
 
     path("admin/", admin.site.urls),
-
+    path("drf/", include("rest_framework.urls")), 
     path("api/auth/", include("apps.users.urls")),
     path("api/stores/", include("apps.stores.urls")),
+    path("api/storefront/", include("apps.storefront.urls")),
     path("api/products/", include("apps.products.urls")),
+    path("api/customers/", include("apps.customers.urls")),
+    path("api/payments/", include("apps.payments.urls")),
 
     # Swagger schema
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),

@@ -1,9 +1,11 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.parsers import MultiPartParser, FormParser
+
+from apps.users.permissions import IsMerchant
 from .models import Store
 from .serializers import StoreSerializer
-from .permissions import IsMerchant
+
 
 
 class StoreViewSet(ModelViewSet):
